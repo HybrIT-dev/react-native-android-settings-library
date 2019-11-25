@@ -1,49 +1,24 @@
 
 apply plugin: 'com.android.library'
 
-buildscript {
-    ext {
-        buildToolsVersion = "27.0.3"
-        minSdkVersion = 16
-        compileSdkVersion = 27
-        targetSdkVersion = 26
-        supportLibVersion = "27.1.1"
+android {
+    compileSdkVersion 23
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        // ndk {
+            // abiFilters "armeabi-v7a", "x86"
+        // }
     }
-    repositories {
-        jcenter()
-        google()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
-        jcenter()
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$rootDir/../node_modules/react-native/android"
-        }
-        google()
-        implementation 'com.facebook.react:react-native:+'
-    }
+    // lintOptions {
+    //    warning 'InvalidPackage'
+    // }
 }
 
-// android {
-//     compileSdkVersion 27
-//     buildToolsVersion "27.0.1"
-
-//     defaultConfig {
-//         minSdkVersion 16
-//         targetSdkVersion 27
-//         versionCode 1
-//         versionName "1.0"
-//         ndk {
-//             abiFilters "armeabi-v7a", "x86"
-//         }
-//     }
-//     lintOptions {
-//        warning 'InvalidPackage'
-//     }
-// }
-
-// dependencies {
-//     implementation 'com.facebook.react:react-native:0.20.+'
-// }
-  
+dependencies {
+    implementation 'com.facebook.react:react-native:0.57.0' // From node_modules
+}
